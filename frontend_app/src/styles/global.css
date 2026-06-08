@@ -1,0 +1,110 @@
+/* Light theme palette (from style guidance)
+   primary: #3B82F6
+   secondary: #10B981
+   accent/success: #F59E0B
+   background: #f9fafb
+   surface: #ffffff
+   text: #111827
+*/
+
+:root {
+    --color-bg: #f9fafb;
+    --color-surface: #ffffff;
+    --color-text: #111827;
+    --color-muted: #6b7280;
+    --color-primary: #3b82f6;
+    --color-secondary: #10b981;
+    --color-accent: #f59e0b;
+
+    --shadow-soft: 0 12px 30px rgba(17, 24, 39, 0.08);
+    --ring: 0 0 0 4px rgba(59, 130, 246, 0.15);
+
+    --radius-lg: 16px;
+    --radius-md: 12px;
+
+    --font-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+        Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji';
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-sans);
+    color: var(--color-text);
+    background: radial-gradient(
+            1200px 600px at 20% 10%,
+            rgba(59, 130, 246, 0.12),
+            transparent 60%
+        ),
+        radial-gradient(
+            900px 500px at 90% 20%,
+            rgba(245, 158, 11, 0.10),
+            transparent 55%
+        ),
+        var(--color-bg);
+}
+
+.AppRoot {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+}
+
+.GreetingCard {
+    width: min(520px, 100%);
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    padding: 28px 28px 26px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(17, 24, 39, 0.06);
+}
+
+.GreetingCard:focus-within {
+    outline: none;
+    box-shadow: var(--shadow-soft), var(--ring);
+}
+
+.GreetingCard__accent {
+    position: absolute;
+    inset: -40% -30% auto auto;
+    width: 280px;
+    height: 280px;
+    background: linear-gradient(
+        135deg,
+        rgba(59, 130, 246, 0.22),
+        rgba(16, 185, 129, 0.16),
+        rgba(245, 158, 11, 0.16)
+    );
+    border-radius: 999px;
+    filter: blur(0px);
+    transform: rotate(15deg);
+}
+
+.GreetingCard__title {
+    margin: 0 0 10px;
+    font-size: 32px;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    position: relative;
+}
+
+.GreetingCard__subtitle {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--color-muted);
+    position: relative;
+}
